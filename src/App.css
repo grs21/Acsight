@@ -22,3 +22,8 @@
   align-items: center;
   background-color: hsl(0deg 0% 0% / 70%);
 }
+.logOut {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+}

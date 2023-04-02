@@ -4,7 +4,7 @@ import Filter from "../component/Filter";
 import User from "../component/UserCard";
 
 function PlayerList() {
-    const { auth, userList } = useSelector(state => state.login);
+    const { userList } = useSelector(state => state.login);
     const { filtersList } = useSelector(state => state.filter);
 
     const filteredList = () => {

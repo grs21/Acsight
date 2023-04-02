@@ -12,6 +12,7 @@ const LoginPage = () => {
     const tokenItem = document.getElementById("floatingToken");
     const history = useHistory();
     const { auth } = useSelector(state => state.login);
+
     const handlerUserName = (event) => {
         let userName = event.target.value;
         if (userName.length > 3) {
@@ -25,7 +26,6 @@ const LoginPage = () => {
         event.preventDefault()
         const feedBack = document.getElementById("feedBack");
         let token = tokenItem.value;
-        history.push("/home");
         if (regex.test(token)) {
             try {
                 let response = await GetUserList(token);
@@ -35,7 +35,7 @@ const LoginPage = () => {
                 feedBack.style.display = "none"
             } catch (error) {
                 feedBack.style.display = "block"
-                feedBack.innerText = "Token kabul edilmedi!"
+                feedBack.innerText = "Token not accepted!"
             }
         } else {
             feedBack.innerText = "Please enter a valid token!"
